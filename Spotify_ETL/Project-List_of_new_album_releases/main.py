@@ -111,9 +111,11 @@ def loadData(df : pd.DataFrame):
 if __name__ == '__main__':
     song_df = extractData()
 
-    transformData(song_df)
+    validation = transformData(song_df)
 
-    loadData(song_df)
-    
+    if validation :
+        loadData(song_df)
+    else:
+        print('Fails at Validation Step')
 
 
